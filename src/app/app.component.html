@@ -6,16 +6,10 @@
 <soho-icons-empty *ngIf="!useNewIcons"></soho-icons-empty>
 <soho-icons-empty-new *ngIf="useNewIcons"></soho-icons-empty-new>
 
-<soho-module-nav-container
-  #moduleNavContainer
-  [ngClass]="{ 'module-nav-container': true }">
-  <soho-module-nav
-    #moduleNav
-    [ngClass]="{ 'module-nav': true }"
+<soho-module-nav-container #moduleNavContainer [ngClass]="{ 'module-nav-container': true }">
+  <soho-module-nav #moduleNav [ngClass]="{ 'module-nav': true }"
     [accordionSettings]="{ 'rerouteOnLinkClick': false, 'expanderDisplay': 'classic' }"
-    [displayMode]="this.model.displayMode"
-    [filterable]="true"
-    [pinSections]="true">
+    [displayMode]="this.model.displayMode" [filterable]="true" [pinSections]="true">
 
     <div class="module-nav-bar">
       <soho-accordion [allowOnePane]="true" [hasPanels]="true" [moduleNav]="true" [rerouteOnLinkClick]="false">
@@ -155,10 +149,35 @@
     </div>
   </soho-module-nav>
   <div class="page-container no-scroll has-module-nav-offset">
-    <app-header
-      #appHeader
-      (hamburgerClick)="toggleModuleNavDisplayMode($event)"></app-header>
-    <!--<router-outlet></router-outlet>-->
+    <app-header #appHeader (hamburgerClick)="toggleModuleNavDisplayMode($event)"></app-header>
+
+    <div soho-tag-list>
+      <span soho-tag>#Tagged</span>
+      <span soho-tag="secondary">#Tagged</span>
+      <span soho-tag="error"><span class="audible">Error</span>Delayed</span>
+      <span soho-tag="success">Open Order</span>
+      <span soho-tag="warning"><span class="audible">Alert</span>Help Order</span>
+      <span soho-tag="info">Information Tag</span>
+      <a href="#" soho-tag [isClickable]="true">#Clickable</a>
+      <a href="#" soho-tag [isDismissible]="true">#Dismissible</a>
+    </div>
+
+    <div class="row top-padding">
+      <div class="twelve columns">
+        <div class="field">
+          <button soho-button (click)="addRow()">Add Row</button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="twelve columns demo" role="main">
+        <section class="scrollable contained-scrolling-right-bottom" style="height: 100%">
+          <div soho-datagrid="auto" [gridOptions]="options"></div>
+        </section>
+      </div>
+    </div>
+
   </div>
 </soho-module-nav-container>
 <div soho-personalize (changetheme)="onChangeTheme($event)"></div>
