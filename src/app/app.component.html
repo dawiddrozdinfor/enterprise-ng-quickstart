@@ -151,17 +151,18 @@
   <div class="page-container no-scroll has-module-nav-offset">
     <app-header #appHeader (hamburgerClick)="toggleModuleNavDisplayMode($event)"></app-header>
 
-    <div soho-tag-list>
-      <span soho-tag>#Tagged</span>
-      <span soho-tag="secondary">#Tagged</span>
-      <span soho-tag="error"><span class="audible">Error</span>Delayed</span>
-      <span soho-tag="success">Open Order</span>
-      <span soho-tag="warning"><span class="audible">Alert</span>Help Order</span>
-      <span soho-tag="info">Information Tag</span>
-      <a href="#" soho-tag [isClickable]="true">#Clickable</a>
-      <a href="#" soho-tag [isDismissible]="true">#Dismissible</a>
+    <div class="row top-padding">
+      <div class="twelve columns">
+        <span soho-tag>#Tagged</span>
+        <span soho-tag="secondary">#Tagged</span>
+        <span soho-tag="error"><span class="audible">Error</span>Delayed</span>
+        <span soho-tag="success">Open Order</span>
+        <span soho-tag="warning"><span class="audible">Alert</span>Help Order</span>
+        <span soho-tag="info">Information Tag</span>
+        <a href="#" soho-tag [isClickable]="true">#Clickable</a>
+        <a href="#" soho-tag [isDismissible]="true">#Dismissible</a>
+      </div>
     </div>
-
     <div class="row top-padding">
       <div class="twelve columns">
         <div class="field">
